@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Category Tree" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <title>User Management</title>
+
+  <!--script src="packages/web_components/platform.js"></script-->
+  <script src="//www.polymer-project.org/components/platform/platform.js"></script>
+
+  <!-- build:css styles/bootstrap.css -->
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" media="screen" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen" />
+  <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
+  <!-- endbuild -->
+
+  <!-- Google Fonts: Lato -->
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css" media="screen" />
+  <link rel="stylesheet" href="styles/spinner.css" media="screen" />
+  <link rel="stylesheet" href="styles/tabs.css" media="screen" />
+  <link rel="stylesheet" href="../angular-material/material-design.min.css" media="screen" />
+  <!-- endbuild -->
+</head>
+<body ng-app="UserManagementApp">
+
+<div ng-include src="'views/Admin.html'">
+  <div class="page-placeholder">
+    <div>User Management</div>
+    <ul class="spinner">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+
+<!--script src="config/config.js" inline></script-->
+
+<!-- build:js scripts/components.js -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/jquery-migrate/jquery-migrate.min.js"></script>
+
+<script src="../bower_components/underscore/underscore.js"></script>
+<script src="../bower_components/underscore.string/lib/underscore.string.js"></script>
+
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!--script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-route/angular-route.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script-->
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js"></script>
+
+<script src="../bower_components/angular-local-storage/angular-local-storage.min.js"></script>
+<script src="../bower_components/angular-underscore/angular-underscore.min.js"></script>
+
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="../bower_components/angular-ui/build/angular-ui.min.js"></script>
+<script src="../angular-material/material-design.min.js"></script>
+<script src="../angular-animate-sequence.js"></script>
+<script src="../angular-material/angular-animate-stylers.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/app/app.js"></script>
+
+<script src="scripts/controllers/Admin.js"></script>
+<script src="scripts/controllers/Users.js"></script>
+<script src="scripts/controllers/Groups.js"></script>
+
+<script src="scripts/services/Users.js"></script>
+<script src="scripts/services/Groups.js"></script>
+<script src="scripts/services/Members.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

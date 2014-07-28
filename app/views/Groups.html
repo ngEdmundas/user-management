@@ -1,0 +1,22 @@
+<material-list ng-controller="GroupsController"
+               class="groups">
+  <material-item class="group" ng-repeat="group in groups.getGroups()">
+    <div class="material-tile-left">
+      <face>
+        <button ng-hide="group.members.length > 0" ng-click="deleteGroup(group)" class="deleteGroupBtn">x</button>
+      </face>
+    </div>
+    <div class="material-tile-content">
+      Group {{ group.name }}
+    </div>
+    <div class="material-tile-right">
+      {{ group.members.length }} members
+    </div>
+  </material-item>
+</material-list>
+
+<div class="material-input-group">
+  <label for="new-group-name">New group name</label>
+  <input id="new-group-name" type="text" ng-model="newGroup.name">
+  <button ng-disabled="!newGroup.name" ng-click="addGroup(newGroup)" class="addTabBtn">Add group</button>
+</div>

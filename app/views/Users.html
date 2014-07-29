@@ -1,37 +1,48 @@
-<material-list ng-controller="UsersController"
-     class="users">
-  <material-item class="user" ng-repeat="user in users.getUsers()">
-    <div class="material-tile-left">
-      <face>
-        <button ng-click="deleteUser(user)" class="deleteUserBtn">x</button>
-      </face>
-    </div>
-    <div class="material-tile-content">
-      User {{ user.name }}
-    </div>
-    <div class="material-tile-right">
-      <span ng-repeat="group in user.memberOf">
-        {{ group }}
-      </span>
-      ({{ user.memberOf.length }})
-      <button ng-if="list.showGroups !== $index"
-              ng-click="list.showGroups = $index"
-              class="addGroupBtn">+</button>
-      <span ng-if="list.showGroups === $index"
-           class="group-buttons">
-        <span ng-repeat="group in groups.getGroups()">
-          <button ng-if="user.memberOf.indexOf(group.name) === -1"
-                  ng-click="assignGroup(group, user)">
-            {{ group.name }}
+<div ng-controller="UsersController">
+  <material-list class="users">
+    <material-item class="user" ng-repeat="(ukey, user) in u.getUsers()">
+      <div class="material-tile-left">
+        <face>
+          <button ng-click="deleteUser(ukey)"
+                  class="delete-button">
+            x
           </button>
+        </face>
+      </div>
+      <div class="material-tile-content">
+        {{ user.name }}
+        <div ng-if="list.showGroups === $index"
+             class="group-buttons">
+          <span ng-repeat="(gkey, group) in g.getGroups()">
+            <button ng-if="!checkMember(gkey, user)"
+                    ng-click="assignGroup(gkey, ukey)"
+                    class="group-button">
+              {{ group.name }}
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="material-tile-right">
+        <span ng-repeat="gkey in user.memberOf">
+          {{ g.getGroup(gkey).name }}
         </span>
-      </span>
-    </div>
-  </material-item>
-</material-list>
+        ({{ user.memberOf.length }})
+        <button ng-if="list.showGroups !== $index"
+                ng-click="list.showGroups = $index"
+                class="add-button">+</button>
+      </div>
+    </material-item>
+  </material-list>
 
-<div class="material-input-group">
-  <label for="new-user-name">New user name</label>
-  <input id="new-user-name" type="text" ng-model="newUser.name">
-  <button ng-disabled="!newUser.name" ng-click="addUser(newwUser)" class="addTabBtn" >Add user</button>
+  <div class="material-input-group">
+    <label for="new-user-name">New user name</label>
+    <input id="new-user-name"
+           type="text"
+           ng-model="newUser.name">
+    <button ng-disabled="!newUser.name"
+            ng-click="addUser()"
+            class="add-button">
+      Add user
+    </button>
+  </div>
 </div>

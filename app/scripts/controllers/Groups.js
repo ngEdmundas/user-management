@@ -6,7 +6,13 @@ UserManagementApp.controller('GroupsController',
       var gcLog = 'GroupsController';
       $log.info(gcLog, 'Groups controller loaded', Groups);
 
-      $scope.groups = Groups;
-   }
+      $scope.newGroup = {name: ''};
+      $scope.g = Groups;
+
+      $scope.addGroup = function () {
+        Groups.addGroup($scope.newGroup);
+        $scope.newGroup.name = '';
+      };
+    }
   ]
 );

@@ -2,6 +2,9 @@
   "author": "EM",
   "name": "UserManagement",
   "version": "0.1.0",
+  "dependencies": {
+    "express": "4.x"
+  },
   "devDependencies": {
     "bower": "^1.2.8",
     "generator-karma": "^0.6.0",

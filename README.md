@@ -5,7 +5,7 @@ user-management
 
 Check wiki page for [User Management REST API](https://github.com/ngEdmundas/user-management/wiki/REST-API)
 
-![Class diagram:](Diagrams/UMS%20-%20Class.png]
+![Class diagram:](Diagrams/UMS%20-%20Class.png)
 
-![DB diagram:](Diagrams/UMS%20-%20ER.png]
+![DB diagram:](Diagrams/UMS%20-%20ER.png)
 

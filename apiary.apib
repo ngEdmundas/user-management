@@ -1,0 +1,105 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# user-management
+User Management API is a *response to API design exercise*.
+
+# Group Groups
+Group related resources of the **User Management API**
+
+## Groups Collection [/groups]
+### List all Groups [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "female"
+        }, {
+          "id": 2, "name": "mother"
+        }]
+
+### Create a Group [POST]
++ Request (application/json)
+
+        { "name": "father" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "name": "father" }
+
+## Group [/groups/{groupId}]
+A single Group object with all its details
+
++ Parameters
+    + groupId (required, number, `1`) ... Numeric `id` of the Group. Has example value.
+
+### Retrieve a Group [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "mother" }
+
+### Remove a Group [DELETE]
++ Response 204
+
+# Group Users
+User related resources of the **User Management API**
+
+## Users Collection [/users]
+### List all Users [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Grug Crood"
+        }, {
+          "id": 2, "name": "Eep Crood"
+        }]
+
+### Create a User [POST]
++ Request (application/json)
+
+        { "name": "Sandy Crood" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "name": "Sandy Crood" }
+
+## User [/users/{userId}]
+A single User object with all its details
+
++ Parameters
+    + userId (required, number, `1`) ... Numeric `id` of the User. Has example value.
+
+### Retrieve a User [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "Eep Crood" }
+
+### Remove a Group [DELETE]
++ Response 204
+
+# Group Membership
+Membership related resources of the **User Management API**
+
+## Membership [/members/{groupId}/{userId}]
+Membership relation between a group and its member user
+
++ Parameters
+    + groupId (required, number, `1`) ... Numeric `id` of the Group. Has example value.
+    + userId (required, number, `5`) ... Numeric `id` of the User. Has example value.
+
+### Create membership relation [PUT]
++ Response 200 (application/json)
+
+### Remove Membership relation [DELETE]
++ Response 204
